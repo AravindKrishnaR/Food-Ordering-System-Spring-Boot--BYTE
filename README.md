@@ -5,6 +5,8 @@
 
 ## **Overview:**
 
+Swagger UI - http://localhost:8083/swagger-ui.html
+
 This project has 3 types of users:
 
 - Admin
