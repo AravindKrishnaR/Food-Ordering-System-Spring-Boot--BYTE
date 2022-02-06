@@ -11,27 +11,33 @@ This project has 3 types of users:
 - Customer
 - Restaurant
 
-The **Admin** has the following functionalities:
+The **Admin** has the following functionalities: 
 
-- Create Customers (POST method) -
-- Update Customers (PUT method) -  
-- View Customers (GET method) - 
-- Delete Customers (DELETE method) - 
-- Create Restaurants (POST method) -
-- Update Restaurants (PUT method) -  
-- View Restaurants (GET method) - 
-- Delete Restaurants (DELETE method) - 
+|**Functionality**|**HTTP Method**|URL|
+| - | - | - |
+|Create Customers|POST|
+|Update Customers|PUT|
+|View Customers|GET|
+|Delete Customers|DELETE|
+|Create Restaurants|POST|
+|Update Restaurants|PUT|
+|View Restaurants|GET|
+|Delete Restaurants|DELETE|
 
 The **Customer** has the following functionalities:
 
-- View food menu by Restaurant (GET method) - 
-- View food menu by Category (GET method) - 
-- Place Order (POST method) - 
-- View Orders (GET method) - 
+|**Functionality**|**HTTP Method**|URL|
+| - | - | - |
+|View food menu by Restaurant|GET|
+|View food menu by Category|GET|
+|Place Order|POST|
+|View Orders|GET|
 
 The **Restaurant** has the following functionalities:
 
-- Add Food (POST method) - 
-- View Food Menu (GET method) - 
-- Delete Food (DELETE method) - 
-- View Orders (GET method) - 
+|**Functionality**|**HTTP Method**|URL|
+| - | - | - |
+|Add Food|POST|
+|View food menu|GET|
+|Delete Food|DELETE|
+|View Orders|GET|
