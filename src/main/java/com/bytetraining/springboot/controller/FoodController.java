@@ -19,33 +19,28 @@ public class FoodController {
 	@Autowired
 	FoodService foodService;
 	
-	@PostMapping("/restaurant/food")
+	@PostMapping("/restaurants/food")
 	private void addFood(@RequestBody Food food) {
 		foodService.addFood(food);
 	}
 	
-	@GetMapping("/restaurant/food/restaurant={restaurantId}")
-	private List<Food> viewFood(@PathVariable int restaurantId) {
-		return foodService.viewFoodByRestaurant(restaurantId);
-	} 
-	
-	@GetMapping("/customer/food/restaurant={restaurantId}")
+	@GetMapping("/restaurants/menu/{restaurantId}")
 	private List<Food> viewFoodByRestaurant(@PathVariable int restaurantId) {
 		return foodService.viewFoodByRestaurant(restaurantId);
 	}
 	
-	@GetMapping("/customer/food/category={category}")
+	@GetMapping("/food/categories/{category}")
 	private List<Food> viewFoodByCategory(@PathVariable String category) {
 		return foodService.viewFoodByCategory(category);
 	}
 	
-	@GetMapping("/customer/food/category")
+	@GetMapping("/food/categories")
 	private List<String> viewCategory() {
 		return foodService.viewCategory();
 	}
 	
-	@DeleteMapping("/restaurant/food")
-	private void deleteFood(int foodId) {
+	@DeleteMapping("/restaurants/food/{foodId}")
+	private void deleteFood(@PathVariable int foodId) {
 		foodService.deleteFood(foodId);
 	}
 }

@@ -16,7 +16,7 @@ public class AdminController {
 	@Autowired
 	AdminService adminService;
 	
-	@PostMapping("/admin/login")
+	@PostMapping("/login/admin")
 	private Admin getAdmin(@RequestBody Map<String, String> json) {
 		String username = json.get("username");
 		String password = json.get("password");

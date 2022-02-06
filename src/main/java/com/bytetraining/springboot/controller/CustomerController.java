@@ -21,7 +21,7 @@ public class CustomerController {
 	@Autowired
 	CustomerService customerService;
 	
-	@PostMapping("/customer/login")
+	@PostMapping("/login/customer")
 	private Customer getCustomer(@RequestBody Map<String, String> json) {
 		String username = json.get("username");
 		String password = json.get("password");
@@ -38,27 +38,27 @@ public class CustomerController {
 		}
 	}
 	
-	@GetMapping("/customer/view")
+	@GetMapping("/customers")
 	private List<Customer> viewCustomers() {
 		return customerService.viewCustomers();
 	}
 	
-	@GetMapping("/customer/view={username}")
+	@GetMapping("/customers/{username}")
 	private Customer viewCustomerById(@PathVariable String username) {
 		return customerService.viewCustomerById(username);
 	}
 	
-	@PostMapping("/customer/add")
+	@PostMapping("/customers")
 	private void addCustomer(@RequestBody Customer customer) {
 		customerService.addOrUpdateCustomer(customer);
 	}
 	
-	@PutMapping("/customer/update")
+	@PutMapping("/customers")
 	private void updateCustomer(@RequestBody Customer customer) {
 		customerService.addOrUpdateCustomer(customer);
 	}
 	
-	@DeleteMapping("/customer/delete={username}")
+	@DeleteMapping("/customers/{username}")
 	private void deleteCustomer(@PathVariable("username") String username) {
 		customerService.deleteCustomer(username);
 	}

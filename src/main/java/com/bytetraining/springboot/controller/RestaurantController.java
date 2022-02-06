@@ -21,7 +21,7 @@ public class RestaurantController {
 	@Autowired
 	RestaurantService restaurantService;
 
-	@PostMapping("/restaurant/login")
+	@PostMapping("/login/restaurant")
 	private Restaurant getRestaurant(@RequestBody Map<String, String> json) {
 		int restaurantId = Integer.parseInt(json.get("restaurantId"));
 		String password = json.get("password");
@@ -37,27 +37,27 @@ public class RestaurantController {
 		}
 	}
 
-	@GetMapping("/restaurant/view")
+	@GetMapping("/restaurants")
 	private List<Restaurant> viewRestaurants() {
 		return restaurantService.viewRestaurants();
 	}
 
-	@GetMapping("/restaurant/view={restaurantId}")
+	@GetMapping("/restaurants/{restaurantId}")
 	private Restaurant viewRestaurantById(@PathVariable int restaurantId) {
 		return restaurantService.viewRestaurantById(restaurantId);
 	}
 
-	@PostMapping("/restaurant/add")
+	@PostMapping("/restaurants")
 	private void addRestaurant(@RequestBody Restaurant restaurant) {
 		restaurantService.addOrUpdateRestaurant(restaurant);
 	}
 
-	@PutMapping("/restaurant/update")
+	@PutMapping("/restaurants")
 	private void updateRestaurant(@RequestBody Restaurant restaurant) {
 		restaurantService.addOrUpdateRestaurant(restaurant);
 	}
 
-	@DeleteMapping("/restaurant/delete={restaurantId}")
+	@DeleteMapping("/restaurants/{restaurantId}")
 	private void deleteRestaurant(@PathVariable("restaurantId") int restaurantId) {
 		restaurantService.deleteRestaurant(restaurantId);
 	}

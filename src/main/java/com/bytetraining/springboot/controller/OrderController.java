@@ -18,17 +18,17 @@ public class OrderController {
 	@Autowired
 	OrderService orderService;
 	
-	@PostMapping("/customer/order")
+	@PostMapping("/restaurants/orders")
 	private void placeOrder(@RequestBody Orders order) {
 		orderService.placeOrder(order);
 	}
 	
-	@GetMapping("/customer/orders/{customerUsername}")
+	@GetMapping("/customers/orders/{customerUsername}")
 	private List<Orders> viewCustomerOrders(@PathVariable String customerUsername) {
 		return orderService.viewCustomerOrders(customerUsername);
 	}
 	
-	@GetMapping("/restaurant/orders/{restaurantId}")
+	@GetMapping("/restaurants/orders/{restaurantId}")
 	private List<Orders> viewRestaurantOrders(@PathVariable int restaurantId) {
 		return orderService.viewRestaurantOrders(restaurantId);
 	}
